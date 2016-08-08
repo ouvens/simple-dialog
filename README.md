@@ -34,6 +34,8 @@
 
 ```javascript
 
+require('jquery.dialog');
+
 $.dialog.alert('提示');
 
 $.dialog.extend({
