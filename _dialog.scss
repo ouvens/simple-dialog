@@ -1,0 +1,106 @@
+
+.ui-dialog{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,.5);
+    z-index: 9;
+    font-size: 14px;
+    .dialog-frame{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 386px;
+        height: auto;
+        background-color: #fff;
+        margin-left: -193px;
+        margin-top: -140px;
+        box-sizing: border-box;
+        padding: 0 0 20px;
+        .i-close{
+            float: right;
+            width: 15px;
+            height: 15px;
+            margin: 10px;
+            background-color: red;
+            cursor: pointer;
+            background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOBAMAAADtZjDiAAAAElBMVEUAAACZmZmZmZmZmZmZmZmZmZn7TU31AAAABXRSTlMA1BUMw99oleIAAAA+SURBVAjXY2BWYGBgYDJgMBEC0orODIqBCgxMokIgDGYDCSUgkwEoIAjiAgVCgVwoDReHqYPpg5kDMxdmDwDiaQijXfMyjAAAAABJRU5ErkJggg==') top left no-repeat;
+        }
+        .i-success, .i-warn, .i-info{
+            margin: 40px auto -20px auto;
+            width: 52px;
+            height: 52px;
+            display: block;
+        }
+        .i-icon.i-success{
+            background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADQAAAA0CAMAAADypuvZAAAAaVBMVEUAAAAxwnwxwnwxwnwxwnwxwnwxwnwxwnwxwnwxwnwxwnwxwnwxwnwxwnwxwnwxwnwxwnwxwnwxwnwxwnwxwnwxwnwxwnz///+E27E9xoTT8uOS37o5xIHH7tzI79xYzpX2/Pl+2a1v1KSoOX5WAAAAFnRSTlMAMMcl9O79497PvpCMZgdLN/mVSZlBr7c0mQAAAUJJREFUSMed1t1ygyAQhuFFwH9jjOYzrba2vf+LrJOOU4zAIu9ZDp7ZGTPAkiXZ3MpcASovb42kgESdYVdWC4b0CSwlrW/KRo7MNe1SpXCWVhebkQW8FfJorhpM+nr4Agpsqn+Z8zSs2s2SGkFpaXy3AoEV/9+wQnDVZkQajtLtX05wouTPtDhV6xjEjxJge/uGkVhRzZv3cTJ+1ivKAsw4LsapJBJB5gEjSc1pg4aG0wY3Kk8blJTD7GfmDXJSMHqMHzNroAhGyziuijPADmF6Ks50pCzKb6Apx0F9zl6DnErYlM+gpAE25TMYqIFNfXkMGhKwKZ+BJMosymsyxyGcPAa167gvcCdiLpaoKyzmsoy6lmMegKinJv5Ri38+ifqON11PL935leAet3zErznxC5VZy61u8Uuicx3VXadd6+gvrma1GHAto78AAAAASUVORK5CYII=') top left no-repeat;
+        }
+        .i-icon.i-warn{
+            background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADQAAAA0CAMAAADypuvZAAAAWlBMVEUAAAD7cVf7cVf7cVf7cVf7cVf7cVf7cVf7cVf7cVf7cVf7cVf7cVf7cVf7cVf7cVf7cVf7cVf7cVf7cVf7cVf7cVf7cVf7cVf7cVf7cVf/////+vn+3tj9u6+BPXeZAAAAGXRSTlMANcaQSvbuLeO+ZgcmJfPfz87JjN2ZlZZBlqq2+AAAARpJREFUSMedltmOgzAMRU0C2RqgC9BeaP//N2cizdZp0mCf9yMnlmxfyhDD4scBGEa/hEg7sNrhCadtRWkVMqiWyjQKBVRTUA4ab9CHnNMf8ZZjn3maQQXTvHSgQ5Wu/VcnOXXrqVZvsAvT/+nbCTs5/fZQYzf650Ng8P2tM0dSX90Gi5YSClke26NcyiLPtm7IkiblAl4lXIjIgYlLr2MTKfClQDMK3Nc78izkS9K6rsjjaeRLIw18aSDwJUikTvI8I2nEJGv5zJdmCnwpkOVLkchxJZeGkCulIbRcydInijcaSrTCJMtStJYlB0B0agRHLcrPp/xQJ271SHCThA9RzMnTnEvKuRFEN1FIrBPD1U+m68zkr9k4+gHOtMxTfMYfogAAAABJRU5ErkJggg==') top left no-repeat;
+        }
+
+        .i-icon.i-info{
+            background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADQAAAA0CAMAAADypuvZAAAAXVBMVEUAAABQwPBQwPBQwPBQwPBQwPBQwPBQwPBQwPBQwPBQwPBQwPBQwPBQwPBQwPBQwPBQwPBQwPBQwPBQwPBQwPBQwPBQwPBQwPBQwPBQwPD////4/f+r4fjW8PvX8PxsJdM/AAAAGXRSTlMAxzX37i1L496XkY0HJiVm87zPzsFJQWhn9KmrJAAAARVJREFUSMedlllygzAQRFtGYhOrjZ20MLn/MVNUKqEcS8DM+381y8dMI0LbV2M5kEM5Vn2LEzhf8IXCuwMlN4xgcqS5GCYwl4TS1NyhbmJOd+Uu1y7SmuUB9q3Fe8ZDsvu/OqtzbL3U6ixPYbvNaW48yW3bYc3T1H8DUcDvWEYimR8np4gcKxOjPOdnupRjnDnMjOIAeMoq0QMoKKRYuxPT4lMu9aiYYAkL41SYUlIIgXFGlHKpxCCXBlAuUSNlmvasahGalU+o5FKFD7nUw8mlFiikUgHASyUPwEklt3PBlvDFGEZ1wjTHUnWWNQ9A9WoUT63Vvs+NXPyoVx7HkeChDR/6mKMPVPropg+JWxy1WWZTcfQbeTjMWozkBYEAAAAASUVORK5CYII=') top left;
+        }
+
+        .dialog-hd{
+            margin-top: 40px;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .dialog-bd{
+            margin-top: 10px;
+            padding: 10px 50px;
+        }
+        .dialog-ft{
+            margin: 20px;
+            text-align: center;
+        }
+        .btn{
+            width: auto;
+            margin-left: 24px;
+            display: inline-block;
+            height: 36px;
+            padding: 0 50px;
+            line-height: 36px;
+            border-radius: 2px;
+            border: solid 1px #e8e9ea;
+            cursor: pointer;
+            &:hover{
+                background-color: #e5e5e5;
+            }
+        }
+
+        .btn-first{
+            margin-left: 0;
+        }
+
+        .extend{
+            display: none;
+            margin: 20px auto 10px auto;
+        }
+    }
+
+    &.alert .dialog-bd, &.info .dialog-bd{
+        text-align: center;
+    }
+    &.warn .btn-confirm{
+        border-color: #fb7157;
+        background-color: #fb7157;
+        color: #fff;
+        &:hover{
+            background-color: #e3654d;
+        }
+    }
+    &.info .btn-confirm, &.confirm .btn-confirm{
+        border-color: #50c0f0;
+        background-color: #50c0f0;
+        color: #fff;
+        &:hover{
+            background-color: #409ec6;
+        }
+    }
+}
